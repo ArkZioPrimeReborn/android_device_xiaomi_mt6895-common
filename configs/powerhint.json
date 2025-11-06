@@ -284,10 +284,20 @@
       "HoldFd": true
     },
     {
+      "Name": "UclampFGMin",
+      "Path": "/dev/cpuctl/foreground/cpu.uclamp.min",
+      "Values": [
+        "0",
+        "10"
+      ],
+      "DefaultIndex": 0,
+      "ResetOnInit": true
+    },
+    {
       "Name": "UclampTAMin",
       "Path": "/dev/cpuctl/top-app/cpu.uclamp.min",
       "Values": [
-        "10",
+        "0",
         "100"
       ],
       "DefaultIndex": 0,
@@ -337,6 +347,12 @@
       "Node": "CPUBigClusterMinFreq",
       "Duration": 58,
       "Value": "1400000"
+    },
+    {
+      "PowerHint": "INTERACTION",
+      "Node": "UclampFGMin",
+      "Duration": 58,
+      "Value": "10"
     },
     {
       "PowerHint": "LAUNCH",
